@@ -1,0 +1,9 @@
+{
+  "text.config.unjank.title": "Unjank Config",
+
+  "text.config.unjank.option.disableFocusBorder": "Disable Focus Border",
+  "text.config.unjank.option.disableWarningBox": "Disable Warning Box",
+  "text.config.unjank.option.disableCommandWarning": "Disable Command Warning Screen",
+
+  "gamerule.sendTriggerFeedback": "Send Trigger Feedback"
+}

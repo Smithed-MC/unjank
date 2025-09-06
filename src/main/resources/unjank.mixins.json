@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "smithed.unjank.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "TriggerCommandMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+	}
+}

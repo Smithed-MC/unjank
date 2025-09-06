@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "unjank",
+	"version": "${version}",
+	"name": "Unjank",
+	"description": "QoL improvements designed for datapacks.",
+	"authors": [
+		"Smithed",
+		"TheNuclearNexus"
+	],
+	"contact": {
+		"homepage": "https://smithed.net/",
+		"sources": "https://github.com/Smithed-MC/unjank"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/unjank/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"smithed.unjank.Unjank"
+		],
+		"client": [
+			"smithed.unjank.UnjankClient"
+		]
+	},
+	"mixins": [
+		"unjank.mixins.json",
+		{
+			"config": "unjank.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": ">=1.21.8",
+		"java": ">=21",
+		"fabric-api": "*",
+		"owo-lib": "~0.12.22+1.21.8"
+	}
+}
