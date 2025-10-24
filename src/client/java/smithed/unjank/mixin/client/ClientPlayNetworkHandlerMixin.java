@@ -20,8 +20,8 @@ public abstract class ClientPlayNetworkHandlerMixin extends ClientCommonNetworkH
         super(client, connection, connectionState);
     }
 
-    @Inject(method = "openConfirmCommandScreen", at = @At(value = "HEAD"), cancellable = true)
-    private void openConfirmCommandScreen(String command, String message, @Nullable Screen screenAfterRun, CallbackInfo ci) {
+    @Inject(method = "openConfirmRunCommandScreen", at = @At(value = "HEAD"), cancellable = true)
+    private void openConfirmRunCommandScreen(String command, String message, @Nullable Screen screenAfterRun, CallbackInfo ci) {
         if (Unjank.CONFIG.disableCommandWarning()) {
             this.sendPacket(new CommandExecutionC2SPacket(command));
             ci.cancel();

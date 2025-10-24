@@ -10,11 +10,11 @@ import smithed.unjank.Unjank;
 @Mixin(NarratedMultilineTextWidget.class)
 public class NarratedMultilineTextWidgetMixin {
 
-    @Redirect(method = "renderWidget", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawBorder(IIIII)V"))
+    @Redirect(method = "renderWidget", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawStrokedRectangle(IIIII)V"))
     private void drawBorders(DrawContext context, int x, int y, int width, int height, int color) {
         if (Unjank.CONFIG.disableFocusBorder())
             return;
 
-        context.drawBorder(x, y, width, height, color);
+        context.drawStrokedRectangle(x, y, width, height, color);
     }
 }
