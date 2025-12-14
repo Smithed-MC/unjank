@@ -24,6 +24,7 @@ public abstract class ClientPlayNetworkHandlerMixin extends ClientCommonNetworkH
     private void openConfirmRunCommandScreen(String command, String message, @Nullable Screen screenAfterRun, CallbackInfo ci) {
         if (Unjank.CONFIG.disableCommandWarning()) {
             this.sendPacket(new CommandExecutionC2SPacket(command));
+            this.client.setScreen(screenAfterRun);
             ci.cancel();
         }
     }
