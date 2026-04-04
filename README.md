@@ -68,3 +68,7 @@ If enabled, macros that fail to be instantiated will be broadcast to *all* opera
 ### Gamerule `unjank:log_macro_failure` (default = `false`)
 
 If enabled, macros that fail to be instantiated will be logged in the game's output log.
+
+### Disabled rate limit for `/trigger`
+
+Unopped players will no longer be kicked for spamming when using `/trigger`.
