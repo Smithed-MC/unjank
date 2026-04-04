@@ -1,0 +1,4 @@
+classTweaker v1 official
+
+accessible field net/minecraft/commands/CommandSourceStack source Lnet/minecraft/commands/CommandSource;
+accessible field net/minecraft/client/gui/screens/dialog/DialogScreen warningButton Lnet/minecraft/client/gui/components/Button;

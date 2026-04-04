@@ -1,15 +1,14 @@
 {
-	"required": true,
-	"package": "smithed.unjank.mixin.client",
-	"compatibilityLevel": "JAVA_21",
-	"client": [
-		"DialogScreenMixin",
-		"NarratedMultilineTextWidgetMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"mixins": [
-		"ClientPlayNetworkHandlerMixin"
-	]
+  "required": true,
+  "package": "smithed.unjank.mixin.client",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "ClientPacketListenerMixin",
+    "DialogScreenMixin",
+    "FocusableTextWidgetMixin",
+    "ScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }

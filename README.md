@@ -10,6 +10,9 @@
 
 ## Client-side Features
 
+### Force close a GUI screen
+Pressing `Alt+Escape` while in a screen/dialog, will force it to close.
+
 > Access the config via `/owo-config unjank` or [Mod Menu](https://modrinth.com/mod/modmenu)
 
 
@@ -46,7 +49,7 @@ Disables the warning screen when running commands of op-level 1+.
 
 ## Server-side Features
 
-### Gamerule `sendTriggerFeedback` (default = `disabled`)
+### Gamerule `unjank:send_trigger_feedback` (default = `sourceAndOps`)
 
 Controls the feedback of the `/trigger` command directly.
 
@@ -57,3 +60,11 @@ Possible values:
 `sourceOnly`: Command feedback only show to the player that ran it.
 
 `sourceAndOps`: Command feedback shown to the player that ran it *and* operators.
+
+### Gamerule `unjank:broadcast_macro_failure` (default = `false`)
+
+If enabled, macros that fail to be instantiated will be broadcast to *all* operators on the server.
+
+### Gamerule `unjank:log_macro_failure` (default = `false`)
+
+If enabled, macros that fail to be instantiated will be logged in the game's output log.

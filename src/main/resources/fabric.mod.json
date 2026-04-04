@@ -31,10 +31,11 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.17.2",
-		"minecraft": ">=1.21.9",
-		"java": ">=21",
+		"fabricloader": ">=0.18.4",
+		"minecraft": ">=26.1",
+		"java": ">=25",
 		"fabric-api": "*",
-		"owo-lib": "~0.12.22+1.21.8"
-	}
+		"owo-lib": "~0.13.0+26.1"
+	},
+	"accessWidener": "unjank.classTweaker"
 }

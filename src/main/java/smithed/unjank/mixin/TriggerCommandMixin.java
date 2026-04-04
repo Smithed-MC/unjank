@@ -1,8 +1,9 @@
 package smithed.unjank.mixin;
 
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.server.command.TriggerCommand;
-import net.minecraft.text.Text;
+import net.minecraft.commands.CommandSource;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.commands.TriggerCommand;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -14,26 +15,26 @@ import java.util.function.Supplier;
 @Mixin(TriggerCommand.class)
 public abstract class TriggerCommandMixin {
 
-    @Redirect(method = "executeAdd", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/command/ServerCommandSource;sendFeedback(Ljava/util/function/Supplier;Z)V"))
-    private static void executeAddFeedback(ServerCommandSource source, Supplier<Text> feedbackSupplier, boolean broadcastToOps) {
-        sendConditionalFeedback(source, feedbackSupplier, broadcastToOps);
+    @Redirect(method = "addValue", at = @At(value = "INVOKE", target = "Lnet/minecraft/commands/CommandSourceStack;sendSuccess(Ljava/util/function/Supplier;Z)V"))
+    private static void addValueFeedback(CommandSourceStack source, Supplier<Component> feedbackSupplier, boolean broadcastToOps) {
+        sendConditionalFeedback(source, feedbackSupplier);
     }
 
-    @Redirect(method = "executeSet", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/command/ServerCommandSource;sendFeedback(Ljava/util/function/Supplier;Z)V"))
-    private static void executeSetFeedback(ServerCommandSource source, Supplier<Text> feedbackSupplier, boolean broadcastToOps) {
-        sendConditionalFeedback(source, feedbackSupplier, broadcastToOps);
+    @Redirect(method = "setValue", at = @At(value = "INVOKE", target = "Lnet/minecraft/commands/CommandSourceStack;sendSuccess(Ljava/util/function/Supplier;Z)V"))
+    private static void setValueFeedback(CommandSourceStack source, Supplier<Component> feedbackSupplier, boolean broadcastToOps) {
+        sendConditionalFeedback(source, feedbackSupplier);
     }
 
-    @Redirect(method = "executeSimple", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/command/ServerCommandSource;sendFeedback(Ljava/util/function/Supplier;Z)V"))
-    private static void executeSimpleFeedback(ServerCommandSource source, Supplier<Text> feedbackSupplier, boolean broadcastToOps) {
-        sendConditionalFeedback(source, feedbackSupplier, broadcastToOps);
+    @Redirect(method = "simpleTrigger", at = @At(value = "INVOKE", target = "Lnet/minecraft/commands/CommandSourceStack;sendSuccess(Ljava/util/function/Supplier;Z)V"))
+    private static void executeSimpleFeedback(CommandSourceStack source, Supplier<Component> feedbackSupplier, boolean broadcastToOps) {
+        sendConditionalFeedback(source, feedbackSupplier);
     }
 
     @Unique
-    private static void sendConditionalFeedback(ServerCommandSource source, Supplier<Text> feedbackSupplier, boolean broadcastToOps) {
-        var value = source.getWorld().getGameRules().get(Unjank.SEND_TRIGGER_FEEDBACK).get();
+    private static void sendConditionalFeedback(CommandSourceStack source, Supplier<Component> feedbackSupplier) {
+        var value = source.getLevel().getGameRules().get(Unjank.SEND_TRIGGER_FEEDBACK);
         if (value != Unjank.TriggerFeedback.disabled) {
-            source.sendFeedback(feedbackSupplier, value == Unjank.TriggerFeedback.sourceAndOps);
+            source.sendSuccess(feedbackSupplier, value == Unjank.TriggerFeedback.sourceAndOps);
         }
     }
 }
