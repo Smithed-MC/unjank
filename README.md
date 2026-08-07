@@ -6,14 +6,12 @@
 
 > A set of QoL improvements, designed for datapacks.
 
-> This mod depends on [owo-lib](https://modrinth.com/mod/owo-lib)
-
 ## Client-side Features
 
 ### Force close a GUI screen
 Pressing `Alt+Escape` while in a screen/dialog, will force it to close.
 
-> Access the config via `/owo-config unjank` or [Mod Menu](https://modrinth.com/mod/modmenu)
+> Access the config via `config/unjank.json` or [Mod Menu](https://modrinth.com/mod/modmenu)
 
 
 ### Disable Focus Border (default = `True`)

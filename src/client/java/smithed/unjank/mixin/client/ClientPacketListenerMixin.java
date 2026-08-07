@@ -27,7 +27,7 @@ public abstract class ClientPacketListenerMixin extends ClientCommonPacketListen
     private void openCommandSendConfirmationWindow(String command, String messageKey, Screen screenAfterCommand, CallbackInfo ci) {
         if (Unjank.CONFIG.disableCommandWarning()) {
             this.send(new ServerboundChatCommandPacket(command));
-            this.minecraft.setScreen(screenAfterCommand);
+            this.minecraft.setScreenAndShow(screenAfterCommand);
             ci.cancel();
         }
     }

@@ -21,6 +21,9 @@
 		],
 		"client": [
 			"smithed.unjank.UnjankClient"
+		],
+		"modmenu": [
+			"smithed.unjank.client.UnjankModMenu"
 		]
 	},
 	"mixins": [
@@ -31,11 +34,10 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.18.4",
-		"minecraft": ">=26.1",
+		"fabricloader": ">=0.19.3",
+		"minecraft": ">=26.2",
 		"java": ">=25",
-		"fabric-api": "*",
-		"owo-lib": "~0.13.0+26.1"
+		"fabric-api": "*"
 	},
 	"accessWidener": "unjank.classTweaker"
 }
