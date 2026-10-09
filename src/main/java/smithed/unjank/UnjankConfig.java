@@ -16,6 +16,7 @@ public class UnjankConfig {
     public boolean disableFocusBorder = true;
     public boolean disableWarningBox = true;
     public boolean disableCommandWarning = true;
+    public boolean disableExperimentalSettingsWarning = true;
 
     public boolean disableFocusBorder() {
         return disableFocusBorder;
@@ -27,6 +28,10 @@ public class UnjankConfig {
 
     public boolean disableCommandWarning() {
         return disableCommandWarning;
+    }
+
+    public boolean disableExperimentalSettingsWarning() {
+        return disableExperimentalSettingsWarning;
     }
 
     public static UnjankConfig createAndLoad() {
@@ -43,6 +48,7 @@ public class UnjankConfig {
                     this.disableFocusBorder = loaded.disableFocusBorder;
                     this.disableWarningBox = loaded.disableWarningBox;
                     this.disableCommandWarning = loaded.disableCommandWarning;
+                    this.disableExperimentalSettingsWarning = loaded.disableExperimentalSettingsWarning;
                 }
             } catch (Exception e) {
                 Unjank.LOGGER.error("Failed to load Unjank config, using defaults", e);

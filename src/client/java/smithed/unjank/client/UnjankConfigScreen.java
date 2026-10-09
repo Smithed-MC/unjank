@@ -48,6 +48,14 @@ public class UnjankConfigScreen extends Screen {
                 })
         );
 
+        contentLayout.addChild(
+            CycleButton.onOffBuilder(Unjank.CONFIG.disableExperimentalSettingsWarning)
+                .create(0, 0, 250, 20, Component.literal("Disable Experimental Settings Warning"), (button, value) -> {
+                    Unjank.CONFIG.disableExperimentalSettingsWarning = value;
+                    Unjank.CONFIG.save();
+                })
+        );
+
         this.layout.addToFooter(
             Button.builder(Component.translatable("gui.done"), button -> this.onClose())
                 .width(200)
