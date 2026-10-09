@@ -6,7 +6,8 @@
     "ClientPacketListenerMixin",
     "DialogScreenMixin",
     "FocusableTextWidgetMixin",
-    "ScreenMixin"
+    "ScreenMixin",
+    "WorldOpenFlowsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
