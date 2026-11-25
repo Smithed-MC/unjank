@@ -41,7 +41,7 @@ public class FunctionCommandMixin {
     private static final DynamicCommandExceptionType ERROR = new DynamicCommandExceptionType((o) -> (Message) o);
 
     @Inject(method = "instantiateAndQueueFunctions", at = @At(value = "INVOKE", target = "Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;create(Ljava/lang/Object;Ljava/lang/Object;)Lcom/mojang/brigadier/exceptions/CommandSyntaxException;"))
-    private static <T extends ExecutionCommandSource<T>> void broadcastError(@Nullable CompoundTag arguments, ExecutionControl<T> output, CommandDispatcher<T> dispatcher, T noCallbackSource, CommandFunction<T> function, Identifier id, CommandResultCallback functionResultCollector, boolean returnParentFrame, CallbackInfo ci, @Local(name = "exception") FunctionInstantiationException exception) {
+    private static <T extends ExecutionCommandSource<T>> void broadcastError(@Nullable CompoundTag arguments, ExecutionControl<T> output, T noCallbackSource, CommandFunction<T> function, Identifier id, CommandResultCallback functionResultCollector, boolean returnParentFrame, CallbackInfo ci, @Local(name = "exception") FunctionInstantiationException exception) {
         if (noCallbackSource instanceof CommandSourceStack context) {
             logException(arguments, id, exception, context);
         }
