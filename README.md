@@ -215,7 +215,7 @@ The creative tab allows you to add a unique tab to the creative mode inventory.
 {
   "icon": {
     "id": "minecraft:diamond",
-    "componetns": {}
+    "components": {}
   },
   "title": "I'm a text component!",
   "items": [
