@@ -10,7 +10,8 @@
     "CreativeModeInventoryScreenAccessor",
     "CreativeModeTabsAccessor",
     "CreativeModeTabAccessor",
-    "CreativeModeTabMixin"
+    "CreativeModeTabMixin",
+    "WorldOpenFlowsMixin"
   ],
   "injectors": {
     "defaultRequire": 1

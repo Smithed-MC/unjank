@@ -44,6 +44,9 @@ Disables the warning screen when running commands of op-level 1+.
 > Disable Command Warning Screen = `True`
 ![](./assets/screenshots/disabled_command_warning_on.gif)
 
+### Disable Experimental Features Warning Screen (default = `True`)
+
+Disables the warning screen when opening a world that uses experimental features.
 
 ## Server-side Features
 
