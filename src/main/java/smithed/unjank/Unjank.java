@@ -6,9 +6,9 @@ import net.fabricmc.fabric.api.gamerule.v1.GameRuleBuilder;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.gamerules.GameRule;
 import net.minecraft.world.level.gamerules.GameRuleCategory;
-import net.minecraft.world.level.gamerules.GameRules;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import smithed.unjank.creativeTabs.TabManager;
 
 public class Unjank implements ModInitializer {
     public static final String MOD_ID = "unjank";
@@ -38,9 +38,16 @@ public class Unjank implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        UnjankRegistries.initialize();
+        TabManager.initialize();
+
     }
 
     public enum TriggerFeedback {
         disabled, sourceOnly, sourceAndOps
+    }
+
+    public static Identifier id(String path) {
+        return Identifier.fromNamespaceAndPath(MOD_ID, path);
     }
 }

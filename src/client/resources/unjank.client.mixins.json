@@ -6,7 +6,11 @@
     "ClientPacketListenerMixin",
     "DialogScreenMixin",
     "FocusableTextWidgetMixin",
-    "ScreenMixin"
+    "ScreenMixin",
+    "CreativeModeInventoryScreenAccessor",
+    "CreativeModeTabsAccessor",
+    "CreativeModeTabAccessor",
+    "CreativeModeTabMixin"
   ],
   "injectors": {
     "defaultRequire": 1
