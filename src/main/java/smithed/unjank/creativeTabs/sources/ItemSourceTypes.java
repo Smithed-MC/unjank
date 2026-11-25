@@ -5,7 +5,7 @@ import net.minecraft.core.Registry;
 import smithed.unjank.Unjank;
 
 public class ItemSourceTypes {
-    public static final Codec<ItemSource> CODEC = ItemSourceType.REGISTRY.byNameCodec().dispatch("type", ItemSource::getType, ItemSourceType::codec);
+    public static final Codec<ItemSource> CODEC = Codec.recursive("ItemSource", self -> ItemSourceType.REGISTRY.byNameCodec().dispatch("type", ItemSource::getType, ItemSourceType::codec));
 
     public static final ItemSourceType<ItemTemplateSource> ITEM_TEMPLATE_SOURCE = register("item", new ItemSourceType<>(ItemTemplateSource.CODEC));
     public static final ItemSourceType<LootSource> LOOT_SOURCE = register("loot", new ItemSourceType<>(LootSource.CODEC));

@@ -18,7 +18,7 @@ public class GroupSource extends ItemSource {
     public static final MapCodec<GroupSource> CODEC = RecordCodecBuilder.mapCodec(
             i -> commonFields(i)
                     .and(
-                            RegistryCodecs.holderSet(UnjankRegistries.ITEM_SOURCE_REGISTRY_KEY).fieldOf("items").forGetter(GroupSource::getItems)
+                            RegistryCodecs.holderSet(UnjankRegistries.ITEM_SOURCE_REGISTRY_KEY, ItemSourceTypes.CODEC).fieldOf("items").forGetter(GroupSource::getItems)
                     ).apply(i, GroupSource::new)
     );
 
