@@ -257,7 +257,7 @@ Within that tag you can reference one of your own item sources, ex.
   "type": "unjank:group",
   "items": [
     {
-      "type": "minecraft:item",
+      "type": "unjank:item",
       "item": {
         "id": "minecraft:poisonous_potato"
       }
